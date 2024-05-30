@@ -18,10 +18,10 @@ let score = 0;
 let timeLeft = 30;
 let gameInterval;
 
-const startbtn = document.getElementById("startbtn");
-const gameContainer = document.getElementById("game-conatainer");
-const scoreElement = document.getElementById("score");
-const timerElement = document.getElementById("timer");
+const startbtn = document.getElementById('startbtn');
+const gameContainer = document.getElementById('game-container');
+const scoreElement = document.getElementById('score');
+const timerElement = document.getElementById('timer');
 
 function generateCards() {
   for (const color of cards) {
@@ -43,14 +43,14 @@ function shuffle(array) {
 
 function handleCardClick(event) {
   const card = event.target;
-  if (!card.classList.contains("card") || card.classList.contains("matched")) {
-    return;
+  if (!card.classList.contains('card') || card.classList.contains('matched')) {
+      return;
   }
   card.textContent = card.dataset.color;
   card.style.backgroundColor = card.dataset.color;
   selectedCards.push(card);
   if (selectedCards.length === 2) {
-    setTimeout(checkMatch, 500);
+      setTimeout(checkMatch, 500);
   }
 }
 
